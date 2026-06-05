@@ -1,0 +1,35 @@
+from pathlib import Path
+
+DATA_DIR = Path("data")
+OUTPUT_DIR = Path("outputs")
+INPUT_GLOB = str(DATA_DIR / "**" / "*.csv")
+
+# Assignment window: inclusive start, exclusive end.
+START_TS = "2021-12-01 00:00:00"
+END_TS = "2022-01-01 00:00:00"
+
+CENTER_LAT = 55.225000
+CENTER_LON = 14.245000
+NAUTICAL_MILE_KM = 1.852
+SEARCH_RADIUS_NM = 50.0
+SEARCH_RADIUS_KM = SEARCH_RADIUS_NM * NAUTICAL_MILE_KM
+
+# Cleaning assumptions. Values are intentionally conservative for commercial ships.
+MIN_MOVING_SOG_KNOTS = 0.6
+MAX_REPORTED_SOG_KNOTS = 75.0
+MAX_IMPLIED_SOG_KNOTS = 75.0
+MAX_TRACK_GAP_SECONDS = 30 * 60
+MIN_DISPLACEMENT_KM = 0.04
+
+# Candidate generation.
+TIME_BUCKET_SECONDS = 60
+TIME_TOLERANCE_SECONDS = 45
+GRID_SIZE_METERS = 125.0
+COLLISION_RADIUS_METERS = 80.0
+MAX_CANDIDATES_TO_VALIDATE = 100
+
+# Validation / plotting.
+TRAJECTORY_WINDOW_MINUTES = 10
+MIN_POINTS_IN_WINDOW = 4
+MIN_POINTS_BEFORE = 1
+MIN_POINTS_AFTER = 1

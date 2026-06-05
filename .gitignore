@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Large AIS data should not be committed
+data/*
+!data/.gitkeep
+
+# Generated artefacts
+outputs/*
+!outputs/.gitkeep
+
+.DS_Store

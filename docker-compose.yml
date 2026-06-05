@@ -1,0 +1,9 @@
+services:
+  ais-collision:
+    build: .
+    image: mija-ais-collision:latest
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+    environment:
+      - SPARK_DRIVER_MEMORY=6g

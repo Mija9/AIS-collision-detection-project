@@ -1,0 +1,1 @@
+"""AIS collision detection package."""
